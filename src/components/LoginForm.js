@@ -1,6 +1,6 @@
 import { useForm } from 'react-hook-form'
 
-export default function LoginForm({ setLoggedIn }) {
+export function LoginForm({ setLoggedIn }) {
     const {register, handleSubmit} = useForm();
 
     function authorize(formBody) {
@@ -15,9 +15,7 @@ export default function LoginForm({ setLoggedIn }) {
             .then(response => response.json())
             .then(data => {
                 setLoggedIn(true);
-                console.log(data);
-                localStorage.setItem('token', 'Bearer ' + data['accessToken'])
-                console.log(localStorage.getItem('token'))
+                document.cookie = `token=Bearer ${data['accessToken']}`
             });
     }
     return (

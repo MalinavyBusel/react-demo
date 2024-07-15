@@ -1,4 +1,4 @@
-import LoginForm from "./components/LoginForm";
+import { Content, LoginForm, Header } from "./components";
 import { useState } from 'react';
 
 export default function App() {
@@ -6,25 +6,13 @@ export default function App() {
     return (
         <>
             {isLoggedIn ? (
-                <Header />
+                <>
+                    <Header />
+                    <Content />
+                </>
             ) : (
                 <LoginForm setLoggedIn={setLoggedIn}/>
             )}
-
-        </>
-    )
-}
-
-function Header({ isLoggedIn }) {
-    return (
-        <div>
-        </div>
-    )
-}
-
-function Content() {
-    return (
-        <>
 
         </>
     )
