@@ -5,6 +5,7 @@ export default function App() {
     let [isLoggedIn, setLoggedIn] = useState(false);
     return (
         <>
+            {/*<Content />*/}
             {isLoggedIn ? (
                 <>
                     <Header />

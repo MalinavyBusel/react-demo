@@ -9,14 +9,18 @@ function getCookie(name) {
 
 export function Content() {
     const [accounts, setAccounts] = useState([]);
-    const token = getCookie('token');
+    const token = getCookie('Authorization');
     useEffect(() => {
         fetch('http://localhost:3000/client/accounts', {
             method: 'GET',
             headers: { 'Authorization': token}
         })
-            .then(response => response.json())
+            .then(response => {
+                console.log(response)
+                response.json()
+            })
             .then(data => {
+                console.log(data);
                 setAccounts(data.accounts);
             })
     }, [])

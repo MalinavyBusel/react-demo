@@ -15,7 +15,6 @@ export function LoginForm({ setLoggedIn }) {
             .then(response => response.json())
             .then(data => {
                 setLoggedIn(true);
-                document.cookie = `token=Bearer ${data['accessToken']}`
             });
     }
     return (
