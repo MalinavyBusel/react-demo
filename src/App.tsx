@@ -5,7 +5,6 @@ import fetchResource from './helpers/fetchAPI';
 import LoginForm from './components/LoginForm/LoginForm';
 
 export default function App() {
-  const [accounts, setAccounts] = useState<{ id: string }[]>([]);
   const [isLoggedIn, setIsLoggedIn] = useState(true);
   useEffect(() => {
     fetchResource('http://localhost:3000/client/accounts').then((response) => {
@@ -14,16 +13,16 @@ export default function App() {
 
         return;
       }
-      response.json().then((data) => {
-        setAccounts(data.accounts);
+      response.json().then(() => {
+        setIsLoggedIn(true);
       });
     });
-  }, [isLoggedIn]);
+  }, []);
 
   return (
     <>
       <p>123</p>
-      {isLoggedIn ? <Accounts accounts={accounts} /> : <LoginForm setIsLoggedIn={setIsLoggedIn} />}
+      {isLoggedIn ? <Accounts /> : <LoginForm setIsLoggedIn={setIsLoggedIn} />}
     </>
   );
 }

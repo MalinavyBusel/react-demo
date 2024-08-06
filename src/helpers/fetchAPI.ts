@@ -16,7 +16,7 @@ export default async function fetchResource(url: string, options: RequestInit = 
   const authHeader = token ? { Authorization: token! } : undefined;
   const optionsObj = {
     ...options,
-    ...(authHeader && { headers: authHeader }),
+    ...(authHeader && { headers: { ...authHeader, ...options.headers } }),
   };
 
   return fetch(url, optionsObj);
