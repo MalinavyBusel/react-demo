@@ -1,0 +1,11 @@
+.some {
+    color: red;
+}
+
+.any {
+    background-color: black;
+}
+
+.board-row > .square {
+    display: inline;
+}
