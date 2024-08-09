@@ -70,3 +70,19 @@
 ::-ms-input-placeholder {
     color: gray;
 }
+
+.password-visibility-button.unseen > .eye {
+    display: block;
+}
+
+.password-visibility-button.unseen > .eye-slash {
+    display: none;
+}
+
+.password-visibility-button > .eye {
+    display: none;
+}
+
+.password-visibility-button > .eye-slash {
+    display: block;
+}
