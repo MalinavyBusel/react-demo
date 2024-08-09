@@ -4,7 +4,7 @@ type FormInputProps = {
   onFormSubmit: (values: FieldValues) => void;
 };
 
-export default function AccountCreationForm({ onFormSubmit }: FormInputProps) {
+function AccountCreationForm({ onFormSubmit }: FormInputProps) {
   const { register, handleSubmit } = useForm();
 
   return (
@@ -19,3 +19,5 @@ export default function AccountCreationForm({ onFormSubmit }: FormInputProps) {
     </form>
   );
 }
+
+export default AccountCreationForm;

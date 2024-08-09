@@ -1,4 +1,4 @@
-export type Acc = {
+export type AccDto = {
   id: string;
   bankId: string;
   currency: 'EUR' | 'USD' | 'RUB';
@@ -6,7 +6,7 @@ export type Acc = {
 };
 
 type AccountInputProps = {
-  account: Acc;
+  account: AccDto;
   onDelete: () => void;
 };
 

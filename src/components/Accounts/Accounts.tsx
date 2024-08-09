@@ -1,40 +1,39 @@
 import { useEffect, useReducer, useState } from 'react';
 import { FieldValues } from 'react-hook-form';
-import { Account, Acc } from '../Account/Account';
+import { Account, AccDto } from '../Account/Account';
 import fetchResource from '../../helpers/fetchAPI';
 import AccountCreationForm from '../AccountCreationForm/AccountCreationForm';
+import fetchAccounts from '../../helpers/api/fetchAccounts';
 
-export default function Accounts() {
-  const [sensor, forceUpdate] = useReducer((x) => x + 1, 0);
-  const [accs, setAccs] = useState<Acc[]>([]);
+function Accounts() {
+  const [, forceUpdate] = useReducer((x) => x + 1, 0);
+  const [accs, setAccs] = useState<AccDto[]>([]);
   useEffect(() => {
-    fetchResource('http://localhost:3000/client/accounts').then((response) => {
-      if (response.status !== 200) {
-        return;
-      }
-      response.json().then((data) => {
-        setAccs(data.accounts);
-      });
-    });
-  }, [sensor]);
+    fetchAccounts(setAccs);
+  }, []);
 
   const handleDelete = (id: string) => {
-    fetchResource(`http://localhost:3000/account/${id}`, { method: 'DELETE' }).then(() => {
-      forceUpdate();
-    });
+    fetchResource(`http://localhost:3000/account/${id}`, { method: 'DELETE' })
+      .then(() => {
+        forceUpdate();
+      });
   };
 
   const handleCreate = (values: FieldValues) => {
     fetchResource('http://localhost:3000/account/create', {
       method: 'POST',
-      body: JSON.stringify({ ...values, amount: 0 }),
+      body: JSON.stringify({
+        ...values,
+        amount: 0,
+      }),
       headers: {
         'Content-Type': 'application/json',
         accept: 'application/json',
       },
-    }).then(() => {
-      forceUpdate();
-    });
+    })
+      .then(() => {
+        forceUpdate();
+      });
   };
 
   return (
@@ -52,3 +51,5 @@ export default function Accounts() {
     </>
   );
 }
+
+export default Accounts;

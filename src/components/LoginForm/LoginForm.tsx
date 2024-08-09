@@ -1,36 +1,31 @@
 import { useForm, FieldValues } from 'react-hook-form';
-import React from 'react';
-import fetchResource from '../../helpers/fetchAPI';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye } from '@fortawesome/free-solid-svg-icons';
+import authorize from '../../helpers/api/login';
+import './LoginForm.css';
 
-type LoginFormInputProps = {
-  setIsLoggedIn: React.Dispatch<React.SetStateAction<boolean>>;
-};
-
-export default function LoginForm(
-  { setIsLoggedIn }: LoginFormInputProps,
-) {
+function LoginForm() {
   const { register, handleSubmit } = useForm();
-
-  function authorize(formBody: FieldValues) {
-    fetchResource('http://localhost:3000/auth/login', {
-      method: 'POST',
-      body: JSON.stringify(formBody),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      credentials: 'include',
-    })
-      .then((response: Response) => response.json())
-      .then(() => {
-        setIsLoggedIn(true);
-      });
-  }
+  const navigate = useNavigate();
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
+  const authorizeHandler = (formBody: FieldValues) => authorize(formBody, navigate, setErrorMsg);
 
   return (
-    <form className="login-form" onSubmit={handleSubmit(authorize)}>
-      <input type="email" {...register('email')} />
-      <input type="password" {...register('password')} />
-      <button type="submit">Войти</button>
-    </form>
+    <div className="form-container">
+      <div className="flex-container">
+        <h2 className="form-header">Login</h2>
+      </div>
+      <form className="login-form" onSubmit={handleSubmit(authorizeHandler)}>
+        <input type="email" className="input-with-text" {...register('email')} placeholder="email" />
+        <FontAwesomeIcon icon={faEye} />
+        <input type="password" className="input-with-text" {...register('password')} placeholder="password" />
+        {errorMsg !== null && <div className="error-container">{errorMsg}</div>}
+        <button type="submit" className="submit-button">Enter</button>
+      </form>
+    </div>
   );
 }
+
+export default LoginForm;

@@ -1,0 +1,72 @@
+.form-container {
+    min-width: 15%;
+    min-height: 30%;
+    margin: auto;
+    border: 2px solid mediumturquoise;
+    border-radius: 20px;
+    background-color: white;
+    padding: 100px 50px 100px 50px
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.login-label {
+    font-family: "Sarala", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+}
+
+.input-with-text {
+    font-family: "Sarala", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    border-width: 0;
+    border-bottom: 1px solid gray;
+    padding-bottom: 4px;
+}
+
+.input-with-text:focus {
+    outline: none;
+    border-color: mediumturquoise;
+}
+
+.submit-button {
+    max-width: 70%;
+    border-radius: 2px;
+    align-self: center;
+    border-width: 0;
+    background-color: mediumturquoise;
+    color: white;
+}
+
+.flex-container {
+    display: flex;
+}
+
+.form-header {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 120px;
+    margin: 10px auto 10px auto;
+}
+
+.error-container {
+    background-color: white;
+    border: 3px solid red;
+    border-radius: 5px;
+}
+
+::placeholder {
+    color: gray;
+}
+
+::-ms-input-placeholder {
+    color: gray;
+}
