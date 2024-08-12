@@ -29,6 +29,9 @@
     border-width: 0;
     border-bottom: 1px solid gray;
     padding-bottom: 4px;
+    padding-right: 0;
+    margin-bottom: 10px;
+    width: 100%
 }
 
 .input-with-text:focus {
@@ -38,11 +41,25 @@
 
 .submit-button {
     max-width: 70%;
-    border-radius: 2px;
+    border-radius: 12px;
     align-self: center;
     border-width: 0;
-    background-color: mediumturquoise;
+    background-color: #007aff;
     color: white;
+    font-size: 20px;
+    font-family: "Sarala", sans-serif;
+    font-weight: 400;
+    margin-top: 16px;
+    padding: 16px 60px;
+}
+
+.submit-button:hover {
+    /*border: 3px solid mediumturquoise;*/
+    background-color: white;
+    color: #007aff;
+    cursor: pointer;
+    outline: 3px solid #007aff;
+    outline-offset: -3px;
 }
 
 .flex-container {
@@ -85,4 +102,18 @@
 
 .password-visibility-button > .eye-slash {
     display: block;
+}
+
+.password-visibility-button {
+    position: absolute;
+    right: 0;
+    color: grey
+}
+
+.password-visibility-button:hover {
+    cursor: pointer
+}
+
+.password-container {
+    position: relative
 }

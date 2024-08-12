@@ -26,12 +26,19 @@ function LoginForm() {
         <h2 className="form-header">Login</h2>
       </div>
       <form className="login-form" onSubmit={handleSubmit(authorizeHandler)}>
-        <input type="email" className="input-with-text unseen" {...register('email')} placeholder="email" />
-        <div className="password-visibility-button unseen" onClick={toggleVisibility}>
-          <FontAwesomeIcon icon={faEye} className="eye" />
-          <FontAwesomeIcon icon={faEyeSlash} className="eye-slash" />
+        <input type="email" className="input-with-text" {...register('email')} placeholder="email" />
+        <div className="password-container">
+          <div className="password-visibility-button unseen" onClick={toggleVisibility}>
+            <FontAwesomeIcon icon={faEye} className="eye" />
+            <FontAwesomeIcon icon={faEyeSlash} className="eye-slash" />
+          </div>
+          <input
+            type="password"
+            className="input-with-text password-input"
+            {...register('password')}
+            placeholder="password"
+          />
         </div>
-        <input type="password" className="input-with-text password-input" {...register('password')} placeholder="password" />
         {errorMsg !== null && <div className="error-container">{errorMsg}</div>}
         <button type="submit" className="submit-button">Enter</button>
       </form>
