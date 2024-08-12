@@ -46,7 +46,7 @@ function Accounts() {
           </li>
         ))}
       </ul>
-      <button>New</button>
+      <button type="button">New</button>
       <AccountCreationForm onFormSubmit={handleCreate} />
     </>
   );

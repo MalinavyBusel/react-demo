@@ -19,4 +19,11 @@ a {
 
 .navlink:hover {
     color: white;
+    cursor: pointer;
+}
+
+.logout-button {
+    margin-left: auto;
+    background-color: inherit;
+    border: 0;
 }

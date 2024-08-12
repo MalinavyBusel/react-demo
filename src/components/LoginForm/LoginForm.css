@@ -54,7 +54,6 @@
 }
 
 .submit-button:hover {
-    /*border: 3px solid mediumturquoise;*/
     background-color: white;
     color: #007aff;
     cursor: pointer;

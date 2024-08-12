@@ -1,6 +1,7 @@
 import { redirect } from 'react-router-dom';
 import getCookie from './getCookie';
 import getRedirectParams from './getRedirectParams';
+import deleteTokens from './deleteTokens';
 
 const updateJwtTokens = () => {
   const refreshToken = (getCookie('Refresh') ?? ' ').split(' ')[1];
@@ -43,6 +44,7 @@ const fetchResource = async (url: string, options: RequestInit = { method: 'GET'
     return fetch(url, createOptionsWithHeader(options));
   }
 
+  deleteTokens();
   const redirectPath = `/login?${getRedirectParams().toString()}`;
   console.log('refresh token not valid, redirecting to', redirectPath);
   window.location.replace(redirectPath);
