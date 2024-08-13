@@ -1,13 +1,14 @@
-import { useEffect, useReducer, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { FieldValues } from 'react-hook-form';
-import { Account, AccDto } from '../Account/Account';
+import Account from '../Account/Account';
+import { AccountDto } from '../../dto/AccountDto';
 import fetchResource from '../../helpers/fetchAPI';
 import AccountCreationForm from '../AccountCreationForm/AccountCreationForm';
 import fetchAccounts from '../../helpers/api/fetchAccounts';
+import compareAccounts from '../../helpers/compareAccounts';
 
 function Accounts() {
-  const [, forceUpdate] = useReducer((x) => x + 1, 0);
-  const [accs, setAccs] = useState<AccDto[]>([]);
+  const [accs, setAccs] = useState<AccountDto[]>([]);
   useEffect(() => {
     fetchAccounts(setAccs);
   }, []);
@@ -15,7 +16,7 @@ function Accounts() {
   const handleDelete = (id: string) => {
     fetchResource(`http://localhost:3000/account/${id}`, { method: 'DELETE' })
       .then(() => {
-        forceUpdate();
+        fetchAccounts(setAccs);
       });
   };
 
@@ -32,19 +33,43 @@ function Accounts() {
       },
     })
       .then(() => {
-        forceUpdate();
+        fetchAccounts(setAccs);
       });
   };
 
   return (
     <>
-      <b>There is something about your profile</b>
+      <table>
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>BankId</th>
+            <th>Currency</th>
+            <th>Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          {accs!.sort(compareAccounts)
+            .map((account) => (
+              <Account
+                account={account}
+                onDelete={() => handleDelete(account.id)}
+                onUpdate={() => fetchAccounts(setAccs)}
+              />
+            ))}
+        </tbody>
+      </table>
       <ul>
-        {accs!.map((account) => (
-          <li key={account.id}>
-            <Account account={account} onDelete={() => handleDelete(account.id)} />
-          </li>
-        ))}
+        {accs!.sort(compareAccounts)
+          .map((account) => (
+            <li key={account.id}>
+              <Account
+                account={account}
+                onDelete={() => handleDelete(account.id)}
+                onUpdate={() => fetchAccounts(setAccs)}
+              />
+            </li>
+          ))}
       </ul>
       <button type="button">New</button>
       <AccountCreationForm onFormSubmit={handleCreate} />
