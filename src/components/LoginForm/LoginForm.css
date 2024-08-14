@@ -1,0 +1,118 @@
+.form-container {
+    min-width: 15%;
+    min-height: 30%;
+    margin: auto;
+    border: 2px solid mediumturquoise;
+    border-radius: 20px;
+    background-color: white;
+    padding: 100px 50px 100px 50px
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.login-label {
+    font-family: "Sarala", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+}
+
+.input-with-text {
+    font-family: "Sarala", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    border-width: 0;
+    border-bottom: 1px solid gray;
+    padding-bottom: 4px;
+    padding-right: 0;
+    margin-bottom: 10px;
+    width: 100%
+}
+
+.input-with-text:focus {
+    outline: none;
+    border-color: mediumturquoise;
+}
+
+.submit-button {
+    max-width: 70%;
+    border-radius: 5px;
+    align-self: center;
+    border-width: 0;
+    background-color: #007aff;
+    color: white;
+    font-size: 20px;
+    font-family: "Sarala", sans-serif;
+    font-weight: 400;
+    margin-top: 16px;
+    padding: 8px 35px;
+}
+
+.submit-button:hover {
+    background-color: white;
+    color: #007aff;
+    cursor: pointer;
+    outline: 3px solid #007aff;
+    outline-offset: -3px;
+}
+
+.flex-container {
+    display: flex;
+}
+
+.form-header {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 120px;
+    margin: 10px auto 10px auto;
+}
+
+.error-container {
+    background-color: white;
+    border: 3px solid red;
+    border-radius: 5px;
+}
+
+::placeholder {
+    color: gray;
+}
+
+::-ms-input-placeholder {
+    color: gray;
+}
+
+.password-visibility-button.unseen > .eye {
+    display: block;
+}
+
+.password-visibility-button.unseen > .eye-slash {
+    display: none;
+}
+
+.password-visibility-button > .eye {
+    display: none;
+}
+
+.password-visibility-button > .eye-slash {
+    display: block;
+}
+
+.password-visibility-button {
+    position: absolute;
+    right: 0;
+    color: grey
+}
+
+.password-visibility-button:hover {
+    cursor: pointer
+}
+
+.password-container {
+    position: relative
+}

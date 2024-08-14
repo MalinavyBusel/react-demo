@@ -1,0 +1,29 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    background-color: mediumturquoise;
+}
+
+a {
+    margin: 10px;
+}
+
+.navlink {
+    text-decoration: none;
+    color: black;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 25px;
+}
+
+.navlink:hover {
+    color: white;
+    cursor: pointer;
+}
+
+.logout-button {
+    margin-left: auto;
+    background-color: inherit;
+    border: 0;
+}
