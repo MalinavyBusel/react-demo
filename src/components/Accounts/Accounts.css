@@ -1,0 +1,62 @@
+.accounts-table {
+    border-collapse: collapse;
+    width: 100%;
+    border-radius: 10px;
+}
+
+
+.accounts-table td, .accounts-table th {
+    height: 70px;
+    text-align: center;
+    min-width: max-content;
+}
+
+.accounts-table .first-column-cell {
+    text-align: left;
+    padding-left: 20px;
+}
+
+
+.accounts-table td {
+    border-top: 1px solid #e7e7e7;
+}
+
+.table-wrapper {
+    border: 1px solid #dcdcdc;
+    border-radius: 5px;
+    margin: 20px;
+}
+
+.amount-column {
+    width: 20%;
+}
+
+.edit-column {
+    width: 5%;
+}
+
+.new-account-button {
+    width: 60px;
+}
+
+.new-account-button {
+    min-width: 80px;
+    width:fit-content;
+    border-radius: 5px;
+    border-width: 0;
+    background-color: #007aff;
+    color: white;
+    font-size: 20px;
+    font-family: "Sarala", sans-serif;
+    font-weight: 400;
+    margin-left: 20px;
+    padding: 5px 10px;
+}
+
+.new-account-button:hover {
+    background-color: white;
+    color: #007aff;
+    cursor: pointer;
+    outline: 3px solid #007aff;
+    outline-offset: -3px;
+}
