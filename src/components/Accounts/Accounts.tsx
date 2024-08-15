@@ -7,6 +7,7 @@ import AccountCreationForm from '../AccountCreationForm/AccountCreationForm';
 import fetchAccounts from '../../helpers/api/fetchAccounts';
 import compareAccounts from '../../helpers/compareAccounts';
 import './Accounts.css';
+import createAccount from '../../helpers/api/createAccount';
 
 function Accounts() {
   const [accs, setAccs] = useState<AccountDto[]>([]);
@@ -23,27 +24,15 @@ function Accounts() {
       });
   };
 
-  const handleCreate = (values: FieldValues) => {
-    fetchResource('http://localhost:3000/account/create', {
-      method: 'POST',
-      body: JSON.stringify({
-        ...values,
-        amount: 0,
-      }),
-      headers: {
-        'Content-Type': 'application/json',
-        accept: 'application/json',
-      },
-    })
-      .then(() => {
-        fetchAccounts(setAccs);
-        setCreateFormVisible(!createFormVisible);
-      });
+  const handleCreate = async (values: FieldValues) => {
+    await createAccount(values);
+    await fetchAccounts(setAccs);
+    setCreateFormVisible(!createFormVisible);
   };
 
   return (
     <>
-      <div className="table-wrapper">
+      <div className="accounts-table-wrapper">
         <table className="accounts-table">
           <thead>
             <tr>

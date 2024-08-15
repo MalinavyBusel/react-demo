@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from 'react';
+import { useState } from 'react';
 import './Account.css';
 import { useForm } from 'react-hook-form';
 import { AccountDto } from '../../dto/AccountDto';

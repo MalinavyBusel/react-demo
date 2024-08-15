@@ -4,16 +4,17 @@ import './AccountCreationForm.css';
 type FormInputProps = {
   onFormSubmit: (values: FieldValues) => void;
   onCancel: () => void;
+  bankId?: string;
 };
 
-function AccountCreationForm({ onFormSubmit, onCancel }: FormInputProps) {
+function AccountCreationForm({ onFormSubmit, onCancel, bankId }: FormInputProps) {
   const { register, handleSubmit } = useForm();
 
   return (
     <div className="popup-container">
       <form className="account-creation-form" onSubmit={handleSubmit(onFormSubmit)}>
         <i className="fa-solid fa-xmark cancel-account-create" onClick={onCancel} />
-        <input className="create-account-input" placeholder="bank id" {...register('bankId')} />
+        <input className="create-account-input" value={bankId} placeholder="bank id" {...register('bankId')} />
         <select className="create-account-select" {...register('currency')}>
           <option value="USD">USD</option>
           <option value="RUB">RUB</option>
@@ -25,5 +26,9 @@ function AccountCreationForm({ onFormSubmit, onCancel }: FormInputProps) {
 
   );
 }
+
+AccountCreationForm.defaultProps = {
+  bankId: '',
+};
 
 export default AccountCreationForm;
