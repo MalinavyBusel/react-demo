@@ -48,6 +48,7 @@ function Accounts() {
             {accs!.sort(compareAccounts)
               .map((account) => (
                 <Account
+                  key={account.id}
                   account={account}
                   onDelete={() => handleDelete(account.id)}
                   onUpdate={() => fetchAccounts(setAccs)}

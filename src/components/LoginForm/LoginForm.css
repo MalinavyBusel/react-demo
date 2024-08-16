@@ -106,7 +106,8 @@
 .password-visibility-button {
     position: absolute;
     right: 0;
-    color: grey
+    color: grey;
+    margin-top: 7px;
 }
 
 .password-visibility-button:hover {

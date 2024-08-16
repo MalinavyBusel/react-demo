@@ -26,3 +26,41 @@
     border-top: 1px solid #e7e7e7;
 }
 
+.pagenum-container {
+    display: inline-block;
+    text-align: center;
+    line-height: 2em;
+    height: 30px;
+    width: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.pagenum-container:hover {
+    background-color: #F5F5F5;
+}
+
+.pagenums-line {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+
+}
+
+.pagenum-container.current-page {
+    background-color: #eaeaea;
+}
+
+.pagenum-container.current-page:hover {
+    background-color: #E0E0E0;
+}
+
+.banks-table .first-column-cell {
+    width: 25%
+}
+
+.banks-table .second-column-cell {
+    width: 25%
+}
