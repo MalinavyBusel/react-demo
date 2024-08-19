@@ -59,7 +59,7 @@ function Account({ account, onDelete, onUpdate }: AccountInputProps) {
           />
         ) : amount}
       </td>
-      <td>
+      <td className="update-buttons">
         {isBeingEdited
           && (
             <div onClick={handleSubmit(onFormSubmit)} className="account-row-button update-ok-button">

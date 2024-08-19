@@ -60,3 +60,17 @@
     outline: 3px solid #007aff;
     outline-offset: -3px;
 }
+
+@media (max-width: 659.98px) {
+    .accounts-table {
+        overflow-x: auto;
+    }
+
+    .accounts-table-wrapper {
+        overflow-x: auto;
+    }
+
+    .edit-column {
+        width: 20%;
+    }
+}

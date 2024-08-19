@@ -64,3 +64,13 @@
 .banks-table .second-column-cell {
     width: 25%
 }
+
+@media (max-width: 659.98px) {
+    .banks-table {
+        overflow-x: auto;
+    }
+
+    .banks-table-wrapper {
+        overflow-x: auto;
+    }
+}

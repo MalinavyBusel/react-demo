@@ -1,6 +1,9 @@
 .account-row-button {
-    visibility: hidden;
+    visibility: visible;
     display: inline-block;
+
+    color: gray;
+    cursor: pointer;
 }
 
 .delete-button {
@@ -13,12 +16,6 @@
 
 .update-ok-button {
     margin-right: 15px;
-}
-
-.account-row:hover .account-row-button {
-    visibility: visible;
-    color: gray;
-    cursor: pointer;
 }
 
 .account-row:hover .account-row-button:hover {
@@ -43,4 +40,26 @@
 
 .amount-input{
     -moz-appearance: textfield;
+}
+
+@media (max-width: 659.98px) {
+    .account-row .update-buttons {
+        min-width: 100px;
+    }
+
+    .amount-input {
+        width: max-content;
+        max-width: 60px;
+    }
+}
+
+@media (max-width: 1009.98px) {
+    .account-row .update-buttons {
+        min-width: 130px;
+    }
+
+    .account-row:hover .account-row-button:hover {
+        color: gray;
+        transform: none;
+    }
 }

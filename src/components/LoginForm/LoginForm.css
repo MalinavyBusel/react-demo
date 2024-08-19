@@ -117,3 +117,16 @@
 .password-container {
     position: relative
 }
+
+@media (max-width: 659.98px) {
+    .form-container {
+        padding: 70px 10px 70px 10px
+    }
+}
+
+@media (max-height: 699.98px) {
+    .form-container {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+}
