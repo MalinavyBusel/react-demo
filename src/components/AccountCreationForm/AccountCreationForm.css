@@ -1,0 +1,87 @@
+.popup-container {
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 10;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.account-creation-form {
+    border: 1px #007aff solid;
+    border-radius: 5px;
+    background-color: white;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    min-width: 20%;
+    margin: auto;
+    padding: 50px;
+    position: relative;
+}
+
+.create-account-input {
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    border-width: 0;
+    border-bottom: 1px solid #e7e7e7;
+    padding-bottom: 4px;
+    padding-right: 0;
+    margin-bottom: 10px;
+    width: 100%
+}
+
+.create-account-select  {
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    border-width: 0;
+    border-bottom: 1px solid #e7e7e7;
+    background-color: white;
+    padding-bottom: 4px;
+    padding-right: 0;
+    margin-bottom: 10px;
+    width: 100%
+}
+
+.create-account-select:focus  {
+    border-width: 0;
+}
+
+.create-account-input:focus {
+    outline: none;
+    border-color: mediumturquoise;
+}
+
+.create-account-button {
+    width: 50%;
+    border-width: 0;
+    margin: auto;
+    background-color: #007aff;
+    color: white;
+    padding: 5px;
+    border-radius: 2px;
+}
+
+.create-account-button:hover {
+    background-color: white;
+    color: #007aff;
+    outline: 1px solid #007aff;
+}
+
+.cancel-account-create {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-top: 10px;
+    margin-right: 10px;
+    transform: scale(1.4);
+    color: gray;
+}
+
+.cancel-account-create:hover {
+    color: black;
+}

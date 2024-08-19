@@ -1,0 +1,65 @@
+.account-row-button {
+    visibility: visible;
+    display: inline-block;
+
+    color: gray;
+    cursor: pointer;
+}
+
+.delete-button {
+    margin-right: 10px;
+}
+
+.scale-me {
+    transform: scale(1.5);
+}
+
+.update-ok-button {
+    margin-right: 15px;
+}
+
+.account-row:hover .account-row-button:hover {
+    color: #007aff;
+    transform: scale(1.4);
+}
+
+.account-row:hover {
+    outline: dimgray solid 1px;
+}
+
+.amount-input {
+    width: max-content;
+    max-width: 80px;
+}
+
+.amount-input::-webkit-outer-spin-button,
+.amount-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.amount-input{
+    -moz-appearance: textfield;
+}
+
+@media (max-width: 659.98px) {
+    .account-row .update-buttons {
+        min-width: 100px;
+    }
+
+    .amount-input {
+        width: max-content;
+        max-width: 60px;
+    }
+}
+
+@media (max-width: 1009.98px) {
+    .account-row .update-buttons {
+        min-width: 130px;
+    }
+
+    .account-row:hover .account-row-button:hover {
+        color: gray;
+        transform: none;
+    }
+}
